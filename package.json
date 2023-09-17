@@ -1,0 +1,56 @@
+{
+  "name": "osp-gwt-form",
+  "displayName": "osp-gwt-form",
+  "description": "OSP GWT Form Extension",
+  "version": "0.0.1",
+  "author": {
+    "name": "liulei6577"
+  },
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "icon": "images/logo.png",
+  "categories": [
+    "Snippets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liulei6577/vscode-osp-gwt-form"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/osp-gwt-form.code-snippets"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:javascript"
+  ],
+  "main": "./dist/extension.js",
+  "private": true,
+  "scripts": {
+    "compile": "npm run bundle",
+    "package": "npm run compile && npx vsce package",
+    "bundle": "esbuild src/extension.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
+    "watch": "tsc -watch -p ./",
+    "test-compile": "tsc -p ./",
+    "pretest": "npm run test-compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.78.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "esbuild": "^0.18.11",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  }
+}

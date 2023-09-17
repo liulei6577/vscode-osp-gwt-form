@@ -1,0 +1,128 @@
+{
+    //MC
+    "MC.getValue()": {
+        "prefix": "mcg",
+        "body": [
+            "MC.getValue($1, $2)"
+        ]
+    },
+    "MC.setValue()": {
+        "prefix": "mcs",
+        "body": [
+            "MC.setValue($1, $2)"
+        ]
+    },
+    //RowSet
+    "$wnd.EFRowSet()": {
+        "prefix": "newrs",
+        "body": [
+            "\\$wnd.EFRowSet()"
+        ]
+    },
+    "var | = $wnd.EFRowSet()": {
+        "prefix": "vnewrs",
+        "body": [
+            "var $1 = \\$wnd.EFRowSet();"
+        ]
+    },
+    //DataSet
+    "$wnd.EFDataSet()": {
+        "prefix": "newds",
+        "body": [
+            "\\$wnd.EFDataSet()"
+        ]
+    },
+    "var | = $wnd.EFDataSet()": {
+        "prefix": "vnewds",
+        "body": [
+            "var $1 = \\$wnd.EFDataSet();"
+        ]
+    },
+    "For Loop DataSet": {
+        "prefix": "fords",
+        "body": [
+            "for (var $1 = 0; $1 < $2.getRowCount(); $1++) {",
+            "    var $3 = $2.getRowSet($1);",
+            "}"
+        ],
+        "description": "DataSet的for循环"
+    },
+    //JParamObject
+    "var PO = $wnd.JParamObject()": {
+        "prefix": "newpo",
+        "body": [
+            "var PO = \\$wnd.JParamObject();"
+        ]
+    },
+    "UUID()": {
+        "prefix": "UUID",
+        "body": [
+            "\\$wnd.UUID()"
+        ],
+        "description": "$wnd.UUID()函数返回GUID"
+    },
+    "uuid()": {
+        "prefix": "uuid",
+        "body": [
+            "\\$wnd.uuid()"
+        ],
+        "description": "$wnd.uuid()函数返回UUID4"
+    },
+    //FM
+    "FormModel": {
+        "prefix": "FM",
+        "body": [
+            "FormModel$1"
+        ]
+    },
+    "var billRowSet = FormModel|.getBillDataSet().getRowSet(0)": {
+        "prefix": "fmbrs",
+        "body": [
+            "var billRowSet = FormModel$1.getBillDataSet().getRowSet(0);"
+        ]
+    },
+    //wnd
+    "$wnd.getCurrentTime(|)": {
+        "prefix": "fct",
+        "body": [
+            "\\$wnd.getCurrentTime($1)"
+        ]
+    },
+    "$wnd.getCurrentTime(\"yyyyMMdd\")": {
+        "prefix": "fctyyyyMMdd",
+        "body": [
+            "\\$wnd.getCurrentTime(\"yyyyMMdd\")"
+        ]
+    },
+    "$wnd.getCurrentTime(\"yyyyMM\")": {
+        "prefix": "fctyyyyMM",
+        "body": [
+            "\\$wnd.getCurrentTime(\"yyyyMM\")"
+        ]
+    },
+    "$wnd.showAlert(...)": {
+        "prefix": "salert",
+        "body": [
+            "\\$wnd.showAlert(\"$1\", \"${2|系统提示|}\", \"${3|MESSAGE_WARN,MESSAGE_ERROR,MESSAGE_NORMAL,MESSAGE_QUESTION|}\", \"${4|确定|}\", ${5|null,FunctionComp|})"
+        ],
+    },
+    "$wnd.showConfirm(...)": {
+        "prefix": "sconfirm",
+        "body": [
+            "\\$wnd.showConfirm(\"$1\", \"${2|系统提示|}\", \"${3|MESSAGE_WARN,MESSAGE_ERROR,MESSAGE_NORMAL,MESSAGE_QUESTION|}\", \"${4|确定|}\", \"${5|取消|}\", ${6|null,FunctionComp|}, ${7|null,FunctionComp|})"
+        ],
+    },
+    //return
+    "return returnObject.setReturnString(\"0\")": {
+        "prefix": "rt0",
+        "body": [
+            "return returnObject.setReturnString(\"0\");",
+        ]
+    },
+    "return returnObject.setReturnString(\"1\")": {
+        "prefix": "rt1",
+        "body": [
+            "return returnObject.setReturnString(\"1\");",
+        ]
+    },
+}
